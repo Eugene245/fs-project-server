@@ -10,10 +10,8 @@ app.use(express.json());
 
 app.use(cors())
 
-// DB Config
 const db = config.get("mongoURI");
 
-// Connect to db
 mongoose
   .connect(db, { useNewUrlParser: true, useCreateIndex: true })
   .then(() => console.log("MongoDB connected..."))
@@ -23,6 +21,7 @@ mongoose
   app.use('/api/users/login', require('./routes/api/users/login'))
   app.use('/api/users', require('./routes/api/users/users'))
   app.use('/api/users/edit', require('./routes/api/users/edit'))
+  app.use('/api/posts', require('./routes/api/posts/posts'))
   app.use('/api/posts/add', require('./routes/api/posts/add'))
   app.use('/api/posts/delete', require('./routes/api/posts/delete'))
 
