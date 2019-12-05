@@ -22,6 +22,7 @@ mongoose
   app.use('/api/users', require('./routes/api/users/users'))
   app.use('/api/users/edit', require('./routes/api/users/edit'))
   app.use('/api/posts', require('./routes/api/posts/posts'))
+  app.use('/api/posts/new-comment', require('./routes/api/posts/addComment'))
   app.use('/api/posts/add', require('./routes/api/posts/add'))
   app.use('/api/posts/delete', require('./routes/api/posts/delete'))
 

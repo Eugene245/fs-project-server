@@ -45,10 +45,10 @@ const PostSchema = new Schema({
     commentText: {
       type: String,
     },
-    likes: {
-      type: Number,
+    creation_date: {
+      type: Date,
+    },
     }
-  }
   ],
   creation_date: {
     type: Date,
