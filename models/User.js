@@ -27,6 +27,12 @@ const UserSchema = new Schema({
   description: {
     type: String,
   },
+  liked_posts: [
+    String
+  ],
+  following: [
+    String
+  ],
   register_date: {
     type: Date,
     default: Date.now,

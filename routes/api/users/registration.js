@@ -13,6 +13,8 @@ router.post('/', (req, res) => {
   const user_id = mongoose.Types.ObjectId()
   const avatar_url = ""
   const description = ""
+  const liked_posts = []
+  const following = []
 
   // Simple validation
   if (!name || !email || !password) {
@@ -33,6 +35,8 @@ router.post('/', (req, res) => {
         password,
         avatar_url,
         description,
+        liked_posts,
+        following,
       })
 
       // Create salt & hash
@@ -54,7 +58,9 @@ router.post('/', (req, res) => {
                     avatar_url: user.avatar_url,
                     name: user.name,
                     email: user.email,
-                    description: user.description
+                    description: user.description,
+                    liked_posts: user.liked_posts,
+                    following: user.following,
                   },
                 })
               },
