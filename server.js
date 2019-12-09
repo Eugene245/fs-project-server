@@ -26,6 +26,7 @@ mongoose
   app.use('/api/posts/new-comment', require('./routes/api/posts/addComment'))
   app.use('/api/posts/add', require('./routes/api/posts/add'))
   app.use('/api/posts/delete', require('./routes/api/posts/delete'))
+  app.use('/api/posts/likes', require('./routes/api/posts/likes'))
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === "production") {
