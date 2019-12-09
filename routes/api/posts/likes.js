@@ -14,7 +14,7 @@ router.post('/like', (req, res) => {
   .then(() => {
     User.findOne({ name: userName })
       .then(user => {
-        Post.update(
+        Post.updateOne(
           { _id: ObjectID(postId) },
           { $inc: { likes: 1 } }
         )
@@ -43,7 +43,7 @@ router.post('/unlike', (req, res) => {
   .then(() => {
     User.findOne({ name: userName })
       .then(user => {
-        Post.update(
+        Post.updateOne(
           { _id: ObjectID(postId) },
           { $inc: { likes: -1 } }
         )
