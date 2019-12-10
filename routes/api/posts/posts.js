@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
       .then(collection => {
         res.json({
           posts: collection.slice(offset, offset + limit),
-          pagination: { offset, limit },
+          pagination: { offset, limit, rowCount: collection.length },
         })
       })
       .catch(error => {
