@@ -4,12 +4,14 @@ const { ObjectID } = require('mongodb')
 
 const Post = require('../../../models/Post')
 
-router.get('/', (req, res) => {
+router.post('/', (req, res) => {
   try {
+    const { users } = req.body
     const { query } = req
     const offset = +query.offset
     const limit = +query.limit
-    Post.find({})
+    if(users.length === 0) {
+      Post.find({})
       .then(collection => {
         res.json({
           posts: collection.slice(offset, offset + limit),
@@ -19,6 +21,18 @@ router.get('/', (req, res) => {
       .catch(error => {
         res.status(400).json({ error })
       })
+    }else {
+      Post.find({ userName: { $in: users } })
+      .then(collection => {
+        res.json({
+          posts: collection.slice(offset, offset + limit),
+          pagination: { offset, limit, rowCount: collection.length },
+        })
+      })
+      .catch(error => {
+        res.status(400).json({ error })
+      })
+    }
   } catch (error) {
     res.send(error)
   }
