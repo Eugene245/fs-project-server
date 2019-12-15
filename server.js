@@ -25,6 +25,7 @@ mongoose
   app.use('/api/users/token', require('./routes/api/users/userByToken'))
   app.use('/api/posts', require('./routes/api/posts/posts'))
   app.use('/api/posts/new-comment', require('./routes/api/posts/addComment'))
+  app.use('/api/posts/delete-comment', require('./routes/api/posts/deleteComment'))
   app.use('/api/posts/add', require('./routes/api/posts/add'))
   app.use('/api/posts/delete', require('./routes/api/posts/delete'))
   app.use('/api/posts/likes', require('./routes/api/posts/likes'))
