@@ -20,6 +20,7 @@ mongoose
   app.use('/api/users/registration', require('./routes/api/users/registration'))
   app.use('/api/users/login', require('./routes/api/users/login'))
   app.use('/api/users', require('./routes/api/users/users'))
+  app.use('/api/users/search', require('./routes/api/users/search'))
   app.use('/api/users/following', require('./routes/api/users/following'))
   app.use('/api/users/edit', require('./routes/api/users/edit'))
   app.use('/api/users/token', require('./routes/api/users/userByToken'))

@@ -10,7 +10,14 @@ router.get('/:name', (req, res) => {
       Post.find({ userId: user._id })
         .then(collection => {
           res.json({
-            user: { name: user.name, avatar_url: user.avatar_url, description: user.description },
+            user: { 
+              name: user.name, 
+              avatar_url: user.avatar_url, 
+              description: user.description,
+              register_date: user.register_date,
+              following: user.following,
+              liked_posts: user.liked_posts,
+            },
             posts: collection,
           })
         })

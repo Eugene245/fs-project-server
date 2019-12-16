@@ -7,7 +7,7 @@ const { ObjectID } = require('mongodb')
 const User = require('../../../models/User')
 
 router.post('/', (req, res) => {
-  const { avatar_url, name, email, description, token } = req.body
+  const { avatar_url, email, description, token } = req.body
   const decoded = jwt.verify(token, config.get('jwtSecret'))
   
   User.findOne({ _id: ObjectID(decoded.id) })
@@ -19,15 +19,6 @@ router.post('/', (req, res) => {
           err => {
             if (err) console.log(err)
           },
-        )
-      }
-      if (name) {
-        User.updateOne(
-          { _id: ObjectID(decoded.id) }, 
-          { $set: { name } }, 
-          err => {
-            if (err) console.log(err)
-          }
         )
       }
       if (email) {
