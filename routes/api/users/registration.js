@@ -50,9 +50,10 @@ router.post('/', (req, res) => {
               { id: user.id },
               config.get('jwtSecret'),
               { expiresIn: 1800 },
-              err => {
+              (err, token) => {
                 if (err) throw err
                 res.json({
+                  token,
                   user: {
                     id: user.id,
                     avatar_url: user.avatar_url,

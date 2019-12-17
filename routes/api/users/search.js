@@ -4,7 +4,7 @@ const User = require('../../../models/User')
 
 router.get('/:query', (req, res) => {
   const { query } = req.params
-  let queryRegexp = new RegExp(query)
+  let queryRegexp = new RegExp(query, 'i')
 
   User.find({ name: queryRegexp })
     .then(list => {

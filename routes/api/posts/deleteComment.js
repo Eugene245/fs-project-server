@@ -26,7 +26,7 @@ router.post('/:id', (req, res) => {
                   .then(post => {
                     res.json({
                       id: post.id,
-                      comments: post.comments,
+                      comments: post.comments.reverse(),
                     })
                   })
               })

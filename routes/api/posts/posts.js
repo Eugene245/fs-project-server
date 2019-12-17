@@ -15,7 +15,7 @@ router.post('/', (req, res) => {
       Post.find({})
       .then(collection => {
         res.json({
-          posts: collection.slice(offset, offset + limit),
+          posts: collection.reverse().slice(offset, offset + limit),
           pagination: { offset, limit, rowCount: collection.length },
         })
       })
@@ -26,7 +26,7 @@ router.post('/', (req, res) => {
       Post.find({ userName: { $in: users } })
       .then(collection => {
         res.json({
-          posts: collection.slice(offset, offset + limit),
+          posts: collection.reverse().slice(offset, offset + limit),
           pagination: { offset, limit, rowCount: collection.length },
         })
       })
@@ -37,7 +37,7 @@ router.post('/', (req, res) => {
       Post.find({ userName: user })
       .then(collection => {
         res.json({
-          posts: collection.slice(offset, offset + limit),
+          posts: collection.reverse().slice(offset, offset + limit),
           pagination: { offset, limit, rowCount: collection.length },
         })
       })
@@ -49,7 +49,7 @@ router.post('/', (req, res) => {
       Post.find({ _id: { $in: ObjectIds } })
       .then(collection => {
         res.json({
-          posts: collection.slice(offset, offset + limit),
+          posts: collection.reverse().slice(offset, offset + limit),
           pagination: { offset, limit, rowCount: collection.length },
         })
       })
