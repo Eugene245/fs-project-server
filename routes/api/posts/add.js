@@ -9,7 +9,6 @@ router.post('/', (req, res) => {
   const post_id = mongoose.Types.ObjectId()
   const userId = mongoose.Types.ObjectId(userIdString)
   const likes = 0
-  const dislikes = 0
   const comments = []
   let postImg = ""
   
@@ -25,7 +24,6 @@ router.post('/', (req, res) => {
       postImg,
       avatar_url,
       likes,
-      dislikes,
       comments,
     })
 
@@ -41,12 +39,10 @@ router.post('/', (req, res) => {
             postText: post.postText,
             postImg: post.postImg,
             likes: post.likes,
-            dislikes: post.dislikes,
             comments: post.comments,
           },
         })
       })
-
   })
 
 module.exports = router

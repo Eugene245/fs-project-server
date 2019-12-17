@@ -33,10 +33,6 @@ const PostSchema = new Schema({
     type: Number,
     required: true,
   },
-  dislikes: {
-    type: Number,
-    required: true,
-  },
   comments: [
     {
     author: {
