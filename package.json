@@ -14,7 +14,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "async": "^2.6.2",
+    "async": "^2.6.4",
     "bcryptjs": "^2.4.3",
     "cheerio": "^1.0.0-rc.2",
     "concurrently": "^4.1.0",
